@@ -1,12 +1,11 @@
-# Octave Group - Touch Tunes
 
-## Take-Home Node JS Exercise
+# Node JS Exercise
 
-### Running the example
+## Running the example
 
-#### Hosting the api
+### Hosting the api
 
-##### Method 1 - Docker
+#### Method 1 - Docker
 
 On Windows, the following command can be executed
 
@@ -21,7 +20,7 @@ To clean up the image and containers, use:
 /assignment1>execute-teardown.cmd
 ```
 
-##### Method 2 - From Node console
+#### Method 2 - From Node console
 
 ```console
 /assignment1> npm install
@@ -37,7 +36,7 @@ or
 
 The app runs localhost on port 8000
 
-#### Calling the api
+### Calling the api
 
 * The default **"GET /"** of the api returns the json result of running the filter with the input values provided in the problem description.
 
@@ -50,7 +49,7 @@ The app runs localhost on port 8000
 }
 ```
 
-#### Running tests
+### Running tests
 
 ```console
 /assignment1> npm test
@@ -62,13 +61,13 @@ or
 /assignment1>yarn test
 ```
 
-### Solution Comments
+## Solution Comments
 
-#### Assumptions and Prerequisites
+### Assumptions and Prerequisites
 
 * It is assumed that the component names are case sensitive
 * It is assumed that the json passed to the core filter function is correctly constructed. There is only a basic schema validation on the post body
 
-#### Logic
+### Logic
 
 The filter function maps components to their names. The resulting array of names is passed to the array filter for settings object. If the number of common (intersection) values is positive, the setting is retained.
