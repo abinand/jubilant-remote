@@ -11,13 +11,11 @@ const { components } = require('./src/components')
 
 app.use(express.json())
 
-app.get('/', [], (req, res) => {
-  Promise.all([settings, components]) // simulate an api call
-    .then(([settingsResult, componentsResult]) => {
-      return filter(settingsResult, componentsResult)
-    })
-    .then((result) => res.send(result))
-    .catch(console.error)
+app.get('/', [], async (req, res) => {
+  const settingsResult = await settings
+  const componentsResult = await components
+  const result = filter(settingsResult, componentsResult)
+  res.send(result)
 })
 
 app.post('/custom', [check('settings').isArray(), check('components').isArray()], (req, res) => {
